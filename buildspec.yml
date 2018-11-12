@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - apt-get update -y
+      - apt-get install -y build-essential
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the C++ code...
+      - g++ hello.cpp -o hello.out
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - hello.out
